@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Care Hospital - Your Health, Our Priority</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/silde.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-page="home">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span><i class="fa-solid fa-location-dot"></i> 123 Health Avenue, Accra, Ghana</span>
+                    <span><i class="fa-solid fa-phone"></i> +233 30 123 4567</span>
+                    <span><i class="fa-solid fa-envelope"></i> info@communitycarehospital.com</span>
+                </div>
+                <div class="datetime-display">
+                    <span id="live-date"></span>
+                    <span id="live-time"></span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><img src="images/hospital logo.png" alt="Community Care Hospital logo"></div>
+                    <div class="logo-text">
+                        <h1>Bayside Community Hospital</h1>
+                        <p>Caring for the community</p>
+                    </div>
+                </a>
+                <nav>
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a></li>
+                        <li><a href="appointment.html"><i class="fa-solid fa-calendar-check"></i> Appointment</a></li>
+                        <li><a href="queue.html"><i class="fa-solid fa-users"></i> Queue</a></li>
+                        <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <p><i class="fa-solid fa-triangle-exclamation"></i> Emergency? Call <strong>112</strong> or <strong>193</strong> immediately!</p>
+            <a href="tel:112">Call Now</a>
+        </div>
+    </div>
+
+    <section class="hero-slider">
+
+    <div class="slider">
+
+        <div class="slides">
+
+            <div class="slide">
+                <img src="images/image 1.jpg">
+                <div class="hero-text">
+                    <h1>Hope Community Hospital</h1>
+                    <p>Quality Healthcare For Everyone</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="images/image 2.jpg">
+                <div class="hero-text">
+                    <h1>Modern Medical Technology</h1>
+                    <p>Advanced Treatment Solutions</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="images/image 3.jpg">
+                <div class="hero-text">
+                    <h1>Experienced Doctors</h1>
+                    <p>Compassionate & Professional Care</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ARROWS -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <!-- DOTS -->
+        <div class="dots"></div>
+
+    </div>
+
+</section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Quality Healthcare for Everyone</h1>
+                <p>At Community Care Hospital, we provide comprehensive medical services with compassion and expertise. Book your appointment today and experience healthcare the way it should be.</p>
+                <div class="hero-buttons">
+                    <a href="appointment.html" class="btn btn-primary btn-lg">Book Appointment</a>
+                    <a href="departments.html" class="btn btn-outline btn-lg">View Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hospital logo.png" alt="Community Care Hospital logo" class="hero-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section">
+        <div class="container">
+            <div class="section-header services-header">
+                <span class="services-kicker">Core Clinical Services</span>
+                <h2>Our Core Services</h2>
+                <p>We offer a wide range of medical services to meet all your healthcare needs under one roof.</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-hospital"></i></div>
+                    <h3>Out-Patient Services</h3>
+                    <p>General consultations, health screenings, and primary care for patients of all ages. Walk-ins welcome.</p>
+                    <div class="service-meta">
+                        <strong>General & Family Care</strong>
+                        <span>Daily clinic consultations</span>
+                    </div>
+                    <a href="appointment.html" class="btn btn-outline-primary">Book Now</a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-pills"></i></div>
+                    <h3>24/7 Pharmacy</h3>
+                    <p>Full-service pharmacy with prescription filling, over-the-counter medications, and expert counseling.</p>
+                    <div class="service-meta">
+                        <strong>Always Available</strong>
+                        <span>Medication support day and night</span>
+                    </div>
+                    <a href="departments.html" class="btn btn-outline-primary">Learn More</a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-flask"></i></div>
+                    <h3>Diagnostic Lab</h3>
+                    <p>State-of-the-art laboratory for blood tests, imaging, X-rays, ultrasound, and comprehensive diagnostics.</p>
+                    <div class="service-meta">
+                        <strong>Accurate Results</strong>
+                        <span>Modern equipment and fast reporting</span>
+                    </div>
+                    <a href="departments.html" class="btn btn-outline-primary">Learn More</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Section -->
+    <section class="section quick-info-section">
+        <div class="container">
+            <div class="section-header quick-info-header">
+                <span class="quick-info-kicker">Why Patients Choose Us</span>
+                <h2>Trusted Healthcare With Measurable Results</h2>
+                <p>From expert clinicians to efficient patient flow, we focus on safe, reliable, and affordable care for every family.</p>
+            </div>
+
+            <div class="quick-info-grid">
+                <article class="quick-info-card">
+                    <div class="quick-info-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <h3>Experienced Medical Team</h3>
+                    <p>Our doctors, nurses, and specialists deliver evidence-based treatment with compassionate support at every step.</p>
+                    <div class="quick-info-meta">
+                        <strong>30+ Specialists</strong>
+                        <span>Across core departments</span>
+                    </div>
+                </article>
+
+                <article class="quick-info-card">
+                    <div class="quick-info-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>Efficient Patient Flow</h3>
+                    <p>Digital queue management and organized scheduling reduce delays, so you spend less time waiting for care.</p>
+                    <div class="quick-info-meta">
+                        <strong>Fast Check-In</strong>
+                        <span>Streamlined service process</span>
+                    </div>
+                </article>
+
+                <article class="quick-info-card">
+                    <div class="quick-info-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3>Affordable & Safe Care</h3>
+                    <p>We combine modern standards of safety with fair pricing, NHIS support, and transparent service options.</p>
+                    <div class="quick-info-meta">
+                        <strong>NHIS Accepted</strong>
+                        <span>Flexible payment support</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h4>Community Care Hospital</h4>
+                        <p>Providing quality healthcare services to our community since 1995. Your health is our priority.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="departments.html">Departments</a></li>
+                            <li><a href="appointment.html">Book Appointment</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Working Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+                        <p>Saturday - Sunday: 9:00 AM - 5:00 PM</p>
+                        <p>Emergency: 24/7</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> 123 Health Avenue, Accra, Ghana</p>
+                        <p><i class="fa-solid fa-phone"></i> +233 30 123 4567</p>
+                        <p><i class="fa-solid fa-envelope"></i> info@communitycarehospital.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Community Care Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/core.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/slide.js"></script>
+    
+
+</body>
+</html>

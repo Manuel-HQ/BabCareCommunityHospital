@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Community Care Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-page="appointment">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span><i class="fa-solid fa-location-dot"></i> 123 Health Avenue, Accra, Ghana</span>
+                    <span><i class="fa-solid fa-phone"></i> +233 30 123 4567</span>
+                </div>
+                <div class="datetime-display">
+                    <span id="live-date"></span>
+                    <span id="live-time"></span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fa-solid fa-hospital"></i></div>
+                    <div class="logo-text">
+                        <h1>Community Care Hospital</h1>
+                        <p>Your Health, Our Priority</p>
+                    </div>
+                </a>
+                <nav>
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a></li>
+                        <li><a href="appointment.html" class="active"><i class="fa-solid fa-calendar-check"></i>  Appointment</a></li>
+                        <li><a href="queue.html"><i class="fa-solid fa-users"></i> Queue</a></li>
+                        <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <p><i class="fa-solid fa-triangle-exclamation"></i> Emergency? Call <strong>112</strong> or <strong>193</strong> immediately!</p>
+            <a href="tel:112">Call Now</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Book an Appointment</h1>
+            <p>Schedule your visit with our expert medical team</p>
+        </div>
+    </section>
+
+    <!-- Appointment Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container" id="appointment-form-container">
+                <div class="form-card">
+                    <h2>Patient Information</h2>
+                    <p>Please fill in all required fields to book your appointment</p>
+                    
+                    <form id="appointment-form">
+                        <!-- Personal Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name <span>*</span></label>
+                                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required>
+                                <span class="error-message" id="fullName-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span>*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g., +233 20 123 4567" required>
+                                <span class="form-hint">Ghana format: +233 XX XXX XXXX or 0XX XXX XXXX</span>
+                                <span class="error-message" id="phone-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gender">Gender <span>*</span></label>
+                                <select id="gender" name="gender" class="form-control" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="error-message" id="gender-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age <span>*</span></label>
+                                <input type="number" id="age" name="age" class="form-control" placeholder="Enter your age" min="0" max="150" required>
+                                <span class="error-message" id="age-error"></span>
+                            </div>
+                        </div>
+
+                        <hr style="margin: 30px 0; border: none; border-top: 1px solid var(--border-color);">
+
+                        <!-- Appointment Details -->
+                        <h3 style="margin-bottom: 20px;">Appointment Details</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="department">Department <span>*</span></label>
+                                <select id="department" name="department" class="form-control" required>
+                                    <option value="">Select Department</option>
+                                </select>
+                                <span class="error-message" id="department-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctor">Preferred Doctor <span>*</span></label>
+                                <select id="doctor" name="doctor" class="form-control" required>
+                                    <option value="">Select Doctor</option>
+                                </select>
+                                <span class="error-message" id="doctor-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-date">Appointment Date <span>*</span></label>
+                                <input type="date" id="appointment-date" name="appointmentDate" class="form-control" required>
+                                <span class="error-message" id="appointment-date-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="time-slot">Time Slot <span>*</span></label>
+                                <select id="time-slot" name="timeSlot" class="form-control" required>
+                                    <option value="">Select Time Slot</option>
+                                    <option value="Morning">Morning (8AM - 12PM)</option>
+                                    <option value="Afternoon">Afternoon (12PM - 4PM)</option>
+                                    <option value="Evening">Evening (4PM - 8PM)</option>
+                                </select>
+                                <span class="error-message" id="time-slot-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="symptoms">Symptoms / Reason for Visit <span>*</span></label>
+                            <textarea id="symptoms" name="symptoms" class="form-control" placeholder="Please describe your symptoms or reason for the appointment..." required></textarea>
+                            <span class="error-message" id="symptoms-error"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline-primary" onclick="window.history.back()">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Confirmation Section (Hidden by default) -->
+            <div id="appointment-confirmation" style="display: none;">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h4>Community Care Hospital</h4>
+                        <p>Providing quality healthcare services to our community since 1995.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="departments.html">Departments</a></li>
+                            <li><a href="appointment.html">Book Appointment</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Working Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+                        <p>Saturday - Sunday: 9:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> 123 Health Avenue, Accra, Ghana</p>
+                        <p><i class="fa-solid fa-phone"></i> +233 30 123 4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Community Care Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/appointment-page.js"></script>
+</body>
+</html>

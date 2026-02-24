@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Community Care Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-page="dashboard">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span><i class="fa-solid fa-location-dot"></i> 123 Health Avenue, Accra, Ghana</span>
+                    <span><i class="fa-solid fa-phone"></i> +233 30 123 4567</span>
+                </div>
+                <div class="datetime-display">
+                    <span id="live-date"></span>
+                    <span id="live-time"></span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fa-solid fa-hospital"></i></div>
+                    <div class="logo-text">
+                        <h1>Community Care Hospital</h1>
+                        <p>Your Health, Our Priority</p>
+                    </div>
+                </a>
+                <nav>
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a></li>
+                        <li><a href="appointment.html"><i class="fa-solid fa-calendar-check"></i> Appointment</a></li>
+                        <li><a href="queue.html"><i class="fa-solid fa-users"></i> Queue</a></li>
+                        <li><a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            <p>Manage appointments and view statistics</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Dashboard Stats -->
+            <div class="dashboard-stats" id="dashboard-stats">
+                <!-- Stats will be rendered by JavaScript -->
+            </div>
+
+            <!-- Appointments Table -->
+            <div class="dashboard-header">
+                <h3>All Appointments</h3>
+                <div class="search-box">
+                    <input type="text" id="dashboard-search" placeholder="Search by Ticket ID or Name...">
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Patient Name</th>
+                            <th>Department</th>
+                            <th>Doctor</th>
+                            <th>Date / Time</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointments-table-body">
+                        <!-- Table rows will be rendered by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h4>Community Care Hospital</h4>
+                        <p>Providing quality healthcare services to our community since 1995.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="departments.html">Departments</a></li>
+                            <li><a href="appointment.html">Book Appointment</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Working Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+                        <p>Saturday - Sunday: 9:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> 123 Health Avenue, Accra, Ghana</p>
+                        <p><i class="fa-solid fa-phone"></i> +233 30 123 4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Community Care Hospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/core.js"></script>
+    <script src="js/dashboard-page.js"></script>
+</body>
+</html>
