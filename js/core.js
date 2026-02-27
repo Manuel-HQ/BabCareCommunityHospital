@@ -126,8 +126,36 @@ function isValidName(value) {
     return /^[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\s'.-]{1,79}$/.test(value);
 }
 
+// Strict RFC-aligned email regex:
+// - local part: alphanum + ._%+- (no leading/trailing dot)
+// - single @
+// - domain: labels separated by dots
+// - TLD: 2-24 alpha characters only
 function isValidEmail(value) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+    return /^[a-zA-Z0-9]([a-zA-Z0-9._%+\-]*[a-zA-Z0-9])?@[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,24}$/.test(value);
+}
+
+// Returns the most specific error message for a given email string
+function getEmailError(value) {
+    if (/\s/.test(value))
+        return 'Email address cannot contain spaces — e.g., name@example.com';
+    if (!value.includes('@'))
+        return 'Email must include "@" — e.g., name@example.com';
+    if ((value.match(/@/g) || []).length > 1)
+        return 'Email can only contain one "@" symbol';
+    const [local, domain] = value.split('@');
+    if (!local)
+        return 'Please enter a username before the "@" symbol';
+    if (/^[.]|[.]$/.test(local))
+        return 'The part before "@" cannot start or end with a dot';
+    if (!domain || !domain.includes('.'))
+        return 'Please include a domain after "@" — e.g., gmail.com';
+    const tld = domain.split('.').pop();
+    if (!tld || tld.length < 2)
+        return 'Email must end with a valid extension — e.g., .com or .org';
+    if (/[^a-zA-Z]/.test(tld))
+        return 'The email extension must contain letters only — e.g., .com, .org, .net';
+    return 'Please enter a valid email address — e.g., name@example.com';
 }
 
 function isValidGhanaPhone(value) {
@@ -192,7 +220,7 @@ function validateField(field) {
         case 'email':
             if (value && !isValidEmail(value)) {
                 isValid = false;
-                errorMessage = 'Please enter a valid email address';
+                errorMessage = getEmailError(value);
             }
             break;
 
