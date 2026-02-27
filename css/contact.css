@@ -11,9 +11,10 @@
 
 .contact-info {
     background: var(--bg-primary);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: 30px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 }
 
 .contact-info h3 {
@@ -25,7 +26,7 @@
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -54,6 +55,7 @@
 .contact-item p {
     margin: 0;
     font-size: 0.95rem;
+    color: var(--text-secondary);
 }
 
 .map-placeholder {
@@ -65,6 +67,99 @@
     justify-content: center;
     margin-top: 20px;
     border: 2px dashed var(--border-color);
+}
+
+#contact-form-container {
+    width: 100%;
+}
+
+.form-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-md);
+}
+
+.form-card h2 {
+    margin-bottom: 10px;
+}
+
+.form-card > p {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+#contact-form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.form-group label span {
+    color: var(--danger-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    transition: var(--transition);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.form-control:hover {
+    border-color: var(--primary-color);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.form-control.error {
+    border-color: var(--danger-color);
+    background: var(--bg-primary);
+}
+
+textarea.form-control {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    min-height: 1.25em;
+    display: block;
+}
+
+.form-actions {
+    margin-top: 4px;
+}
+
+.form-actions .btn {
+    min-width: 180px;
 }
 
 .success-message {
@@ -101,7 +196,12 @@
 }
 
 @media (max-width: 768px) {
+    .contact-info,
     .form-card {
         padding: 25px;
+    }
+
+    .form-actions .btn {
+        width: 100%;
     }
 }
