@@ -80,12 +80,12 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fullName">Full Name <span>*</span></label>
-                                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required>
+                                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" minlength="2" maxlength="80" autocomplete="name" required>
                                 <span class="error-message" id="fullName-error"></span>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number <span>*</span></label>
-                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g., +233 20 123 4567" required>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g., +233 20 123 4567" inputmode="tel" autocomplete="tel" required>
                                 <span class="form-hint">Ghana format: +233 XX XXX XXXX or 0XX XXX XXXX</span>
                                 <span class="error-message" id="phone-error"></span>
                             </div>
@@ -151,7 +151,7 @@
 
                         <div class="form-group">
                             <label for="symptoms">Symptoms / Reason for Visit <span>*</span></label>
-                            <textarea id="symptoms" name="symptoms" class="form-control" placeholder="Please describe your symptoms or reason for the appointment..." required></textarea>
+                            <textarea id="symptoms" name="symptoms" class="form-control" placeholder="Please describe your symptoms or reason for the appointment..." minlength="10" maxlength="1000" required></textarea>
                             <span class="error-message" id="symptoms-error"></span>
                         </div>
 

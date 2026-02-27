@@ -11,11 +11,18 @@ function handleContactSubmit(event) {
     }
 
     const formData = new FormData(form);
+
+    const subjectField = document.getElementById('subject');
+    if (subjectField && !validateField(subjectField)) {
+        subjectField.focus();
+        return;
+    }
+
     const message = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject') || 'General Inquiry',
-        message: formData.get('message')
+        name: formData.get('name').trim(),
+        email: formData.get('email').trim(),
+        subject: (formData.get('subject') || '').trim() || 'General Inquiry',
+        message: formData.get('message').trim()
     };
 
     saveContactMessage(message);

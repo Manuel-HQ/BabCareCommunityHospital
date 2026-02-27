@@ -92,8 +92,8 @@ function handleAppointmentSubmit(event) {
 
     const appointment = {
         ticketId: generateTicketId(),
-        fullName: formData.get('fullName'),
-        phone: formData.get('phone'),
+        fullName: formData.get('fullName').trim(),
+        phone: formData.get('phone').trim(),
         gender: formData.get('gender'),
         age: formData.get('age'),
         department: dept.name,
@@ -102,7 +102,7 @@ function handleAppointmentSubmit(event) {
         doctorId: doctor.id,
         date: formData.get('appointmentDate'),
         timeSlot: formData.get('timeSlot'),
-        symptoms: formData.get('symptoms'),
+        symptoms: formData.get('symptoms').trim(),
         status: 'Pending',
         createdAt: new Date().toISOString()
     };
